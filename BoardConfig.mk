@@ -33,11 +33,6 @@ BOARD_SUPER_PARTITION_GROUPS := moto8937_dynpart_v1
 BOARD_MOTO8937_DYNPART_V1_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304 )
 BOARD_MOTO8937_DYNPART_V1_PARTITION_LIST := system system_ext product vendor odm
 
-# Properties
-ifeq ($(TARGET_KERNEL_VERSION),4.19)
-TARGET_VENDOR_PROP += device/motorola/moto8937/vendor_k4.19.prop
-endif
-
 # Recovery
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 

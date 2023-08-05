@@ -22,6 +22,11 @@ $(call inherit-product, device/xiaomi/mithorium-common/mithorium.mk)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 
+# Properties
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += $(LOCAL_PATH)/vendor_k4.19.prop
+endif
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
